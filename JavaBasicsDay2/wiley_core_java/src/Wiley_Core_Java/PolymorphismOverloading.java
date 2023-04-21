@@ -8,7 +8,7 @@ class Add{
 		System.out.println("Sum float = "+(a+b));
 	}
 }
-public class Polymorphism_Overloading {
+public class PolymorphismOverloading {
 	public static void main(String[] args) {
 		Add a = new Add();
 		a.add(2,3);
