@@ -22,7 +22,7 @@ class SmartCar extends Car {
 public class MultiLevelInheritance {
 	
 	public static void main(String[] args) {
-		SmartCar sc = new Car();
+		SmartCar sc = new SmartCar();
 		sc.tyre();
 		sc.steering();
 		sc.airbag();
