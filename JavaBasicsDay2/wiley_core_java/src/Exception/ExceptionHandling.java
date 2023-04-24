@@ -11,10 +11,10 @@ public class ExceptionHandling {
 			System.out.println(arr[1]);
 			
 			System.out.println("Second statement");
-			
+			int a = 11/0;
 			String s = "Prajwal";
 			System.out.println(s.charAt(8));
-			int a = 11/0;
+			
 			System.out.println("Third statement");
 		}catch(ArrayIndexOutOfBoundsException e) {
 			System.out.println(e.getMessage());
@@ -26,6 +26,7 @@ public class ExceptionHandling {
 		} catch(Exception e) {
 			System.out.println("Catch Block 3");
 			e.printStackTrace();
+			System.out.println("Exception handled");
 		} 
 		System.out.println("Another statement");
 	}
