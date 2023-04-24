@@ -34,7 +34,7 @@ public class NestedTryCatch {
 				System.out.println(10/0);
 			} catch (Exception ee) {
 				// TODO: handle exception
-				System.out.println("Intside this catch block exception");
+				System.out.println("Inside this catch block exception");
 				ee.printStackTrace();
 			}
 		} finally {
