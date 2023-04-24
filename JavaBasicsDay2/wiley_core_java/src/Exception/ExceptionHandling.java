@@ -8,12 +8,25 @@ public class ExceptionHandling {
 		int arr[] = {1,2,3,4,5};
 		try {
 			System.out.println(arr[2]);
-			System.out.println(arr[10]);
-		}catch(Exception e) {
+			System.out.println(arr[1]);
+			
+			System.out.println("Second statement");
+			
+			String s = "Prajwal";
+			System.out.println(s.charAt(8));
+			int a = 11/0;
+			System.out.println("Third statement");
+		}catch(ArrayIndexOutOfBoundsException e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.toString());
 			e.printStackTrace();
-		}
+		} catch(IndexOutOfBoundsException e) {
+			System.out.println("Catch Block 2");
+			e.printStackTrace();
+		} catch(Exception e) {
+			System.out.println("Catch Block 3");
+			e.printStackTrace();
+		} 
 		System.out.println("Another statement");
 	}
 
