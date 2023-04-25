@@ -26,5 +26,8 @@ public class StringProcess {
 		for(String st: str2) {
 			System.out.println(st);
 		}
+		String userinput = "     Moblie   ";
+		System.out.println(userinput);
+		System.out.println(userinput.trim());
 	}
 }
