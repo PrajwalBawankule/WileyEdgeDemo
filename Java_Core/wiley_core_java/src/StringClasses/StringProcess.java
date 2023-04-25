@@ -11,7 +11,7 @@ public class StringProcess {
 		System.out.println(s3==s4);
 		
 		String str = "I am Prajwal";
-		String s = "Hello";
+		String s = "Hello ";
 				
 		System.out.println(str.charAt(5));
 		System.out.println(str.length());
@@ -19,5 +19,12 @@ public class StringProcess {
 		String str1 = s.concat(str);
 		System.out.println(str1);
 		
+		System.out.println(str.replace("I","i"));
+		
+		String str2[] = str.split(" ");
+		System.out.println(str2);
+		for(String st: str2) {
+			System.out.println(st);
+		}
 	}
 }
