@@ -11,8 +11,8 @@ public class StringTokenizerClass {
 		while(s.hasMoreElements()) {
 			System.out.println(s.nextToken());
 		}
-		
-		StringTokenizer st = new StringTokenizer("I:am:Praju",":");
+		String input = "I:am:Praju";
+		StringTokenizer st = new StringTokenizer(input,":");
 		System.out.println(st.countTokens());
 		while(st.hasMoreElements()) {
 			System.out.println(st.nextToken());
