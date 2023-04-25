@@ -23,6 +23,10 @@ public class StringBufferClass {
 //		System.out.println(sb);
 		sb.insert(13,"1");
 		System.out.println(sb);
+		System.out.println(sb.delete(5, 9));
+		System.out.println(sb);
+		System.out.println(sb.reverse());
+		System.out.println(sb);
 	}
 
 }
