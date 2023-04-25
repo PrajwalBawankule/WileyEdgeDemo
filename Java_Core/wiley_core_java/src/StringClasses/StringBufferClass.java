@@ -17,6 +17,12 @@ public class StringBufferClass {
 		System.out.println(s.equals(sb.toString()));
 		sb.append("Program");
 		System.out.println(sb);
+		sb.insert(5,"_");
+		System.out.println(sb);
+//		sb.insert(14,"1");
+//		System.out.println(sb);
+		sb.insert(13,"1");
+		System.out.println(sb);
 	}
 
 }
