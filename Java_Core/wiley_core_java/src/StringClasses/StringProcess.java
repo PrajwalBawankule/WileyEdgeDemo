@@ -26,8 +26,11 @@ public class StringProcess {
 		for(String st: str2) {
 			System.out.println(st);
 		}
-		String userinput = "     Moblie   ";
+		String userinput = "     Mobile   ";
 		System.out.println(userinput);
 		System.out.println(userinput.trim());
+		
+		System.out.println(str.substring(3,9));
+		System.out.println(str.toUpperCase());
 	}
 }
