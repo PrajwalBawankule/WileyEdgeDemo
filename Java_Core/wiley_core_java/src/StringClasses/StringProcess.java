@@ -9,5 +9,15 @@ public class StringProcess {
 		System.out.println(s1==s2);
 		System.out.println(s1==s3);
 		System.out.println(s3==s4);
+		
+		String str = "I am Prajwal";
+		String s = "Hello";
+				
+		System.out.println(str.charAt(5));
+		System.out.println(str.length());
+		
+		String str1 = s.concat(str);
+		System.out.println(str1);
+		
 	}
 }
