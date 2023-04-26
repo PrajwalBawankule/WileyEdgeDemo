@@ -24,6 +24,8 @@ public class CurrencyClass {
 		Currency cur = Currency.getInstance("USD");
 		String symbol = cur.getSymbol();
 		System.out.println(symbol);
+		
+		
 	}
 
 }
