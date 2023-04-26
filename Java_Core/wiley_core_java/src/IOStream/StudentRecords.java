@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.*;
 
-class Student{
+class Student1{
 	public String name;
 	public String gender;
 	public int age;
@@ -44,7 +44,7 @@ class Student{
 		this.grade = grade;
 	}
 	
-	public Student(String name,String gender,int age,int grade) {
+	public Student1(String name,String gender,int age,int grade) {
 		super();
 		this.name = name;
 		this.gender = gender;
@@ -73,16 +73,16 @@ public class StudentRecords {
 		int grade;
 		System.out.println("Enter number of students : ");
 		int n = sc.nextInt();sc.nextLine();
-		Student[] stu = new Student[n];
+		Student1[] stu = new Student1[n];
 		for(int i=0;i<n;i++) {
 			name = sc.nextLine();
 			gender = sc.nextLine();
 			age = sc.nextInt();sc.nextLine();
 			grade = sc.nextInt();sc.nextLine();
-			Student st = new Student(name,gender,age,grade);
+			Student1 st = new Student1(name,gender,age,grade);
 			stu[i] = st;
 		}
-		for(Student st : stu) {
+		for(Student1 st : stu) {
 			String s = st.details();
 			
 			byte[] b = s.getBytes();

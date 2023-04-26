@@ -41,6 +41,7 @@ public class BOStream {
 		}
 		bis.close();
 		fin.close();
+		
 	}
 
 }

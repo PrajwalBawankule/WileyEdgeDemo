@@ -1,10 +1,10 @@
 Name : Prajwal
-Gender : Male
+Gender : true
 Age : 22
-Grade : 96
+Grade : 96.6f
 
 Name : Ram
-Gender : Male
+Gender : true
 Age : 21
 Grade : 97
 
