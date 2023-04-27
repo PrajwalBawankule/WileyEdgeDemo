@@ -25,6 +25,10 @@ public class ThreadPriority {
 		TPriority t1 = new TPriority();
 		TPriority t2 = new TPriority();
 		TPriority t3 = new TPriority();
+		
+		t1.setName("First thread");
+		t2.setName("Thread 2");
+		t3.setName("Thread 3");
 		t1.start();
 		t1.join(10);
 		System.out.println(t1.getState());
