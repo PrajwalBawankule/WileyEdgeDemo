@@ -16,7 +16,12 @@ public class SetClassses {
 		System.out.println(ts);
 		System.out.println(ts.first());
 		System.out.println(ts.last());
-		System.out.println(ts.headSet("n"));
+		System.out.println(ts.headSet("n")); // <n
+		System.out.println(ts.tailSet("n"));  // >=n
+		System.out.println(ts.subSet("a", "t"));  // >=a and < t
+		System.out.println(ts.descendingSet());
+		
+		
 	}
 
 }
