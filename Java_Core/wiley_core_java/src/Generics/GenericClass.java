@@ -1,6 +1,7 @@
 package Generics;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GenericClass {
 
@@ -30,13 +31,26 @@ public class GenericClass {
 		
 		shout("Amount", 2000);
 		
+		List<Integer> intList = new ArrayList<>();
+		intList.add(3);
+		printList(intList);
+		
+		List<Cat> catList = new ArrayList<>();
+		catList.add(new Cat());
+		printList(catList);
+	}
+	
+	private static void printList(List<?> myList) {
+		System.out.println(myList);
 	}
 //	private static <T> void shout(T shoutOut) {
 //		System.out.println(shoutOut + "..!!!");
 //	}
 	
-	private static <T,V> void shout(T shoutOut,V valueToBring) {
+	private static <T,V> T shout(T shoutOut,V valueToBring) {
 		System.out.println(shoutOut + "..!!!");
 		System.out.println(valueToBring + "..!!!");
+		
+		return shoutOut;
 	}
 }
