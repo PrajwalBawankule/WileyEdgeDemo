@@ -9,7 +9,7 @@ public class FunctionalInterfaceClass {
 	public static void main(String[] args) {
 		
 		//implement abstract method of calc class
-		Calc cl = (int val) -> val + 54;
+		Calc cl = (int val) -> val + 55;
 		
 		System.out.println("result = "+cl.calculate(23));
 		
