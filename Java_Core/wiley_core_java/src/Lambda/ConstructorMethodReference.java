@@ -1,6 +1,6 @@
 package Lambda;
 
-interface getInfo {
+interface GetInfo {
 	Info getMsg(String str);
 }
 class Info{
@@ -13,7 +13,7 @@ public class ConstructorMethodReference {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		getInfo info = Info::new;
+		GetInfo info = Info::new;
 		info.getMsg("hello");
 	}
 
