@@ -69,6 +69,18 @@ DROP procedure if EXISTS 'getAllCustomers';
 --List Procedures
 SHOW procedure status;
 
+SHOW procedure status WHERE db='WIleyEdge';
+
+SHOW procedure status LIKE= '%order%';
+
+---List Procedure using data dictionary
+
+SELECT 
+    routine name FROM information_schema.routines
+    WHERE routine_type = 'PROCEDURE'
+    AND 
+    routine_schema = 'WileyEdge';
+    
 -----------------
 
 --Create procedures using parameters
@@ -162,4 +174,92 @@ CALL GetTotalOrder();
 
 
 
+-----------------------------
+--Stored procedure with Error handling
 
+DECLARE action HANDLER FOR condition_value statement;
+
+CONTINUE OR EXIT?
+
+-------
+
+CREATE TABLE supplierProducts(
+    supplierId INT,
+    productId INT,
+    PRIMARY KEY (supplierId,productId)
+);
+
+DELIMITER $$
+CREATE PROCEDURE InsertSupplierProduct(
+    IN inSupplierId INT,
+    IN inProductId INT
+)
+BEGIN
+    --exit if the duplicate key occurs
+    DECLARE EXIT HANDLER FOR 1062
+    BEGIN
+        SELECT CONCAT('Duplicate key (', inSupplierId, ',', inProductId,') occured') AS message;
+    END;
+
+    --insert new row into the supplierProducts
+
+    INSERT INTO supplierProducts(supplierId, productId)
+    VALUES(inSupplierId,inProductId);
+
+    --return the products supplier by the supplier id
+
+    SELECT count(*)
+    FROM supplierProducts
+    WHERE supplierId = inSupplierId
+END $$
+DELIMITER ;
+
+
+----------------
+--working with function
+
+DELIMITER $$
+CREATE FUNCTIOn function_name(
+    parameter 1,
+    parameter 2,
+    ......
+)
+RETURN data_type
+BEGIN 
+    --statements
+END $$
+DELIMITER ;
+
+--create a function tthat returns the customer level based on credit
+DELIMITER $$
+CREATE FUNCTION CustomerLevel(
+    credit DECIMAL(10,2)
+)
+RETURNS varchar(20)
+DETERMINISTIC
+BEGIN 
+    DECLARE CustomerLevel VARCHAR(20);
+
+    IF credit > 5000 THEN 
+        SET CustomerLevel = 'PLATINUM';
+    ELSEIF (credit >= 5000 AND credit<=10000) THEN 
+        SET CustomerLevel = 'GOLD';
+    ELSEIF credit < 10000 THEN 
+        SET CustomerLevel = 'SILVER';
+    END IF;
+
+    RETURN (CustomerLevel);
+END $$
+DELIMITER ;
+
+--listing funcions
+SHOW FUNCTION STATUS WHERE db = 'WileyEdge';
+
+--calling function
+SELECT 
+    customerName,
+    CustomerLevel(creditLimit)
+FROM 
+    customers 
+ORDER BY 
+    customerName;
