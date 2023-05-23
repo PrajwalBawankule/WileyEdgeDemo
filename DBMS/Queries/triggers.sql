@@ -72,9 +72,9 @@ Create TRIGGER before_extra_payment
     BEFORE INSERT on Cust
     for each row 
 BEGIN 
-    if (NEW.extra_payment > 2*NEW.emi_amount) null THEN 
-        INSERT INTO reminder(id,name,message)
-        values(NEW.id,NEW.name,concat('Hi ',New.name,', please update your dob.'))
+    if (NEW.extra_payment > 2*NEW.emi_amount) THEN 
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Extra amount greater than 2 times";
     END IF;
 END $$
 DELIMITER ;
+
