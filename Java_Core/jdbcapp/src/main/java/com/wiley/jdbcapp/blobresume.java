@@ -15,15 +15,37 @@ import java.sql.Statement;
 public class blobresume {
 
 	public static void writeBlob(int candidateId,String fileName) throws SQLException, FileNotFoundException {
-		Connection conn = null;
+		 String query = "UPDATE candidates SET resume = ? WHERE id=?";
+	        Connection conn = null;
+	        PreparedStatement ps = null;
+	        try  {
+	        	conn = DBConnection.createConnection();
+	        	ps = conn.prepareStatement(query);
+	            File file = new File(fileName);
+	            FileInputStream fname = new FileInputStream(file);
+
+
+	            ps.setBinaryStream(1, fname);
+	            ps.setInt(2, candidateId);
+
+	            System.out.println("Added file in the database");
+	            ps.executeUpdate();
+
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	}
+	
+	public static void getBlobData(int candidateID, String filename) {
+    	Connection conn = null;
     	ResultSet rs = null;
     	try {
     		String sql = "SELECT resume FROM candidates WHERE id = ?";
     		conn = DBConnection.createConnection();
     		PreparedStatement ps = conn.prepareStatement(sql);
-    		ps.setInt(1, candidateId);
+    		ps.setInt(1, candidateID);
     		rs= ps.executeQuery();
-    		File file = new File(fileName);
+    		File file = new File(filename);
     		FileOutputStream fout = new FileOutputStream(file);
     		
     		while(rs.next()) {
@@ -38,13 +60,14 @@ public class blobresume {
     	} catch(Exception e) {
     		e.printStackTrace();
     	}
-	}
+
+    }
 	
 	public static void main(String[] args) throws FileNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 
-		writeBlob(2,"C:\\Users\\Acer\\Documents\\Wiley Edge\\wiley_git_project\\Java_Core\\jdbcapp\\Docs\\Prajwal_Resume.pdf");
-		
+		writeBlob(132,"C:\\Users\\Acer\\Documents\\Wiley Edge\\wiley_git_project\\Java_Core\\jdbcapp\\Docs\\Prajwal_Resume.pdf");
+		getBlobData(133, "Prajwal_Resume.pdf");
 	}
 
 }

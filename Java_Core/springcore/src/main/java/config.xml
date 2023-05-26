@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/spring-context.xsd">
+
+
+	<bean class="com.wiley.springcore.Address" name="wileystudent2">
+		<property name="address" value="Mumbai"></property>
+	</bean>
+
+	<bean class="com.wiley.springcore.Student" name="wileystudent2">
+		<property name="studentId" value="200"></property>
+		<property name="studentName" value="Prajwal1"></property>
+		<property name="studentAddress" value="Nagpur111"></property>
+
+		<property name="obj">
+			<ref bean="wileystudent2" />
+		</property>
+	</bean>
+
+
+	<!-- <bean class="com.wiley.springcore.Student" name="wileystudent1"> <property 
+		name="studentId" value="2000"></property> <property name="studentName" value="Prajwal"></property> 
+		<property name="studentAddress" value="Nagpur"></property> <property name="studentId"> 
+		<value>1919</value> </property> <property name="studentName"> <value>Prajwal</value> 
+		</property> <property name="studentAddress"> <value>Nagpur</value> </property> 
+		</bean> <bean class="com.wiley.springcore.Student" name="wileystudent2"> 
+		<property name="studentId" value="200"></property> <property name="studentName" 
+		value="Prajwal1"></property> <property name="studentAddress" value="Nagpur111"></property> 
+		</bean> <bean class="com.wiley.springcore.Student" name="wileystudent3" p:studentId="2002" 
+		p:studentName="pra" p:studentAddress="Mumbai"> </bean> <bean class="com.wiley.springcore.StudentDesc" 
+		name="wileystudentdesc1"> <property name="id"> <value>100</value> </property> 
+		<property name='skills'> <list> <value>Java</value> <value>Python</value> 
+		<value>C</value> </list> </property> <property name='marks'> <set> <value>100</value> 
+		<value>105</value> <value>100</value> <value>106</value> </set> </property> 
+		<property name='courseduration'> <map> <entry key="java" value="2" /> <entry 
+		key="java1" value="1" /> </map> </property> <property name="props"> <props> 
+		<prop key="name">Prajwal</prop> <prop key="work">WileyEdge</prop> </props> 
+		</property> </bean> -->
+</beans>
