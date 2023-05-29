@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util
+		https://www.springframework.org/schema/util/spring-util.xsd">
+		
+	<context:annotation-config/>
+	
+	<bean id="address1" class="com.wiley.springcore.misc.Address">
+		<constructor-arg value= "XYZ"></constructor-arg>
+		<constructor-arg value= "abc"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="employee" class="com.wiley.springcore.misc.Employee">
+		<constructor-arg value= "Prajwal"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="prajwal" 
+	class="com.wiley.springcore.misc.SingletonA"
+	factory-method="getSingletonA">
+	</bean>
+	
+	
+	<!-- <bean id="s" class="com.wiley.springcore.misc.Student" 
+	factory-method="getStudentInfo"></bean> 
+	
+	
+	<bean id="s1" class="com.wiley.springcore.misc.Student" 
+	factory-method="getStudentInfo" factory-bean="s"></bean>  -->
+</beans>
