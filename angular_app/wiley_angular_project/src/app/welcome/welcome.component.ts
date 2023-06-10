@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { STUDENTS } from './mock-students';
+import { Student } from './students';
 
 @Component({
   selector: 'app-welcome',
@@ -16,5 +17,11 @@ export class WelcomeComponent {
 //   }
 
  students = STUDENTS;
+
+ selectedStudent? : Student;
+
+ onSelect(student : Student): void{
+  this.selectedStudent = student;
+ }
 
 }
